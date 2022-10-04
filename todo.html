@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title> Todo - list </title>
+
+		<style>
+		
+		*{
+		
+			padding: 0;
+			margin: 0;
+		}
+		.showcase{
+		
+		}
+		
+		header{
+			display: flex;
+			width: 100%;
+			padding: 1% 0;
+			/*background-color: rgba(50, 50, 50, 0.7);*/
+			background-color: #88634E;
+			
+			backdrop-filter: blur(12px);
+      	-webkit-backdrop-filter: blur(12px);
+		}
+		
+		header img{<div class="a">
+	a
+</div>
+			
+			width: 40px;
+			height: 40px;
+			margin-left: 10%;
+		
+		}
+		
+		header div{
+		
+			width: 40%;
+		}
+		
+		header nav{
+		
+			width: 45%;
+			
+			display: flex;
+		
+		}
+		
+		
+		header a{
+			display: block;
+			width: 20%;
+			padding: 1% 0;
+			
+			
+			font-size: 1.2em;
+			text-decoration: none;
+			color: white;
+			text-align: center;
+			
+			
+		}
+		
+		header a:hover{
+		
+			color: orange;
+			text-decoration: underline;
+		}
+		
+		body{
+		
+		/*	background-color: black;
+			color: white;*/
+		
+		}
+		
+		h1{
+		
+			width: 100%;
+			font-size: 2.5em;
+			text-align:center;
+			padding: 2% 0;
+			text-transform: uppercase;
+			
+		}
+		
+		/********* List styling ******/
+		
+		.list-container{
+			width: 70%;
+			margin: 2% 10%;
+			padding: 5%;
+			background-color: #EDE4DD;
+			border-radius: 4px;
+			
+  			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+		}
+		
+		.list-wrapper{
+			width: 100%;
+			margin: 0;
+			padding: 0 0 2% 0;
+			height: 200px;
+			
+			background-color: rgba(240,240,240, 0.2);
+			border: 2px solid #88634E90;
+
+			overflow: scroll;
+			overflowY: scroll;
+		}
+		
+		.list-wrapper::scrollbar-track {
+  			background: orange;        /* color of the tracking area */
+		}
+		
+		
+		.list-wrapper::-webkit-scrollbar-track {
+   		 background-color: black;
+	  }
+
+		
+		ol li{
+		
+			font-size: 2em;
+			border-bottom: 2px solid #88634E;
+			list-style-position: inside;
+			
+		}
+		
+		ol li:nth-child(even){
+		
+			background-color: rgba(200,200,200, 0.2);
+		}
+		
+		ol li:hover .delete-button{
+		
+			display: inline-block;
+		}
+		
+		.delete-button{
+			display: none;
+			font-size: 0.4em;
+			background-color: rgba(0,0,0,0);
+			padding: 0 1%;
+			margin: 0 ;
+			color: #88634E90;
+			border: 2px solid #88634E;
+			border-radius: 50%;
+			
+		}
+		
+		.delete-button:hover{
+		
+			background-color: #88634E;
+			color: #EDE4DD;
+		}
+		
+		
+		
+		/**** interface   ****/
+		
+		.interface{
+		
+			
+			width: 80%;
+			margin: 5% 10%;
+			padding: 0 ;
+			font-size: 1.5em;
+			
+			border-bottom: 2px solid gray;
+			display: flex;
+		}
+		
+		.count-wrapper{
+			
+			width: 20%;
+			
+		}
+		
+		.count-wrapper p{
+			display: inline;
+
+		}
+		
+		.question-wrapper{
+		
+			width: 70%;
+			
+			
+		}
+		
+		#question{
+		
+			border-radius: 0;
+			width: 80%;
+			font-size: 0.8em;
+			padding: 0.5% 0;
+			margin: 1% 0;
+
+		}
+		
+		
+		
+		.button-wrapper{
+			width: 20%;
+			
+
+		}
+		
+		.button-wrapper button{
+	
+			width: 40px;
+			height: 40px;
+			border-radius: 4px;
+			
+			font-size: 1.2em;
+		
+		}
+		
+		
+		button:hover{
+		
+			cursor: pointer;
+
+		}
+		
+		#add{
+		
+			background-color: rgba(220,220,220,1); 
+			transition: background-color 0.5s;
+		}
+		#add:hover{
+			background-color:green;
+		
+		}
+		
+		#subtract{
+			background-color: rgba(220,220,220,1);
+			transition: background-color 0.5s;
+		}
+		
+		#subtract:hover{
+		
+			background-color: red;
+		}
+		
+		/*** footer  ***/
+		footer{
+		
+			width: 100%;
+			padding: 1% 0;
+			background-color: #88634E;
+			color: white;
+			
+		
+		}
+		
+		footer p{
+			width: 30%;
+			margin-left: 60%;
+			padding: 1%;
+			
+		}
+		footer p a{
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 1.2em;
+			
+			color: rgba(200,200,200,1);
+			
+		}
+		
+		footer p a:hover{
+			color: orange;
+			text-decoration: underline;
+		}
+		</style>
+		</head>
+		<body>
+		
+		<header>
+					<img src="logo.jpeg" alt="Logo"> 
+					<div class="space01"></div>
+					<nav>
+						<a href="#">Home</a>
+						<a href="#">About</a>
+						<a href="#">Contact Us</a>
+					</nav>
+				</header>
+			</div>
+			<main>
+				<h1>Todo List </h1>
+				<div class="list-container">
+					<div class="list-wrapper">
+						<ol id="list">
+							
+						</ol>
+					</div>
+				</div>
+				<div class="interface">
+
+					<div class="count-wrapper wrapper">Num.: <p id="count">0</p></div>
+					<div class="question-wrapper ">Q: <input type="text" id="question" placeholder="Insert question here..."></div>
+					<div class="button-wrapper wrapper">
+						<button id="add" onclick="add();" >+</button>
+						<button id="subtract" onclick="subtract();" >-</button>
+					</div>
+					<div class="array-wrapper">
+						Items in array: <p id="array"></p>
+					</div>
+				</div>
+				
+			</main>
+			<footer>
+				<p>Copyright &copy; 2022 <a href="https://www.fdzwebsllc.com">fdzwebsllc</a> 
+				</p>
+			</footer>
+			
+			<!-- Script!!! -->
+			<script>
+				window.onload = init;
+				
+				//GLOBAL VARIABLES 
+				var count = 0;
+				var elementCount = document.getElementById("count");
+				var list = document.getElementById("list");
+				
+				var listArray = ["water", "bread", "milk"];
+				
+				//FUNCTIONS
+				function init(){
+				
+					for(var item in listArray){
+					
+						//increment count
+						count++;
+						
+						//get variables from array 
+						var nuItem = 
+									`<li class="item" > ${listArray[item]}?  <button onclick="deleteItem(this);" class="delete-button">X</button></li>`;						
+						//Append item to list 
+						list.innerHTML += nuItem;
+						
+						//update count element
+						elementCount.innerHTML = count;
+						
+						itemsInArray();
+				
+					}
+				}
+				
+				function itemsInArray(){
+				
+					var par = document.getElementById("array");
+					var len = listArray.length;
+					par.innerHTML = len;
+				
+				}
+				
+				function add(){
+					//increment count
+					count++;
+					//get user input
+					var text = document.getElementById("question").value;
+					
+					
+					//add to list
+					var nuItem = 
+									`<li class="item" > ${text}? <button id=${count} onclick="deleteItem(this);" class="delete-button">X</button></li>`;	
+										
+					//APPEND item to list
+					list.innerHTML += nuItem;
+					
+					//add to list Array
+					listArray.push(text);	
+					
+					//clear text box
+					document.getElementById("question").value="";
+					
+					//update count element
+					elementCount.innerHTML = count;
+					
+					itemsInArray();
+					
+				}
+				
+				
+				function deleteItem(s){
+				
+					//remove list item
+					s.parentElement.remove(s);
+					
+					//get element id which has index number and convert to integer
+					var num = parseInt(s.id);
+					
+					//get actual index
+					var index = listArray.indexOf(num);
+					
+					//remove from array
+					listArray.splice(index,1);
+					
+					//update count and display
+					count--;
+					elementCount.innerHTML = count;
+					
+					//display current number of items in array
+					itemsInArray();
+				}
+			
+				
+				function subtract(){
+					
+					
+					list.removeChild(list.lastElementChild);
+					var index = listArray.indexOf(count)
+					listArray.splice(index,1);
+					count--;
+					elementCount.innerHTML = count;					
+					itemsInArray();
+				}
+				
+									
+				
+			</script>
+	</body>
+</html>
